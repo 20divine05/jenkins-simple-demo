@@ -1,12 +1,12 @@
 pipeline {
   agent any
 
-  srages {
-    
-    stage('clone') {
+  stages {
+
+    stage('Clone') {
       steps {
-        git url: 'https://github.com/20divine05/k=jenkins-simple-demo.git',
-          }
+        git url: 'https://github.com/20divine05/jenkins-simple-demo.git', branch: 'main'
+      }
     }
 
     stage('Run Script') {
@@ -15,5 +15,6 @@ pipeline {
         sh './script.sh'
       }
     }
+
   }
 }
